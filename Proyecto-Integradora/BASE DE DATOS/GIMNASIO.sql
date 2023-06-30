@@ -247,7 +247,7 @@ select * from citas_spin;
   insert into citas values
   ('','2023-06-29','16:00:00','confirmada',100,2202),
   ('','2023-06-25','13:00:00','completada',106,2201),
-  ('','2023-06-28','14:00:00','cancelada',107,2202);
+  ('','2023-06-28','14:00:00','cancelada',105,2202);
   
   
   insert into ficha_nutri values
