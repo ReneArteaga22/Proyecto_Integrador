@@ -46,8 +46,13 @@ where persona.nombre= 'Anahi';
 
 /*- 2.citas agendadas para cierto servicio citas agendadas para cierta fecha para determinado empleado.*/
 select * from citas 
+where serv_emp=2202 and fecha between '2023-06-01' and '2023-06-30'
+and estado = 'confirmada';
 
-/*- 3. citas agendadas para clases para cierta fecha para determinado empleado.*/
+/*- 3. citas agendadas para clases agendadas para cierta fecha*/
+select * from citas_spin
+where fecha between '2023-07-01' and '2023-07-31'
+and estado= 'confirmada';
 
 
 /*LADO DE LA RECEPCIONISTA
