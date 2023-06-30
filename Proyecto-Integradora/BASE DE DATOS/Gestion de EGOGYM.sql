@@ -36,9 +36,10 @@ where persona.nombre= 'Anahi';
 
 
 
-/*- 2.citas agendadas para cierta fecha para determinado empleado.*/
+/*- 2.citas agendadas para cierto servicio citas agendadas para cierta fecha para determinado empleado.*/
+select * from citas 
 
-
+/*- 3. citas agendadas para clases para cierta fecha para determinado empleado.*/
 
 
 /*LADO DE LA RECEPCIONISTA
