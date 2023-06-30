@@ -31,7 +31,7 @@ select citas_spin.fecha, clases.dia, clases.hora from persona
 inner join cliente on persona.id_persona=cliente.id_cliente
 inner join citas_spin on cliente.id_cliente=citas_spin.cliente
 inner join clases on citas_spin.clase=clases.id_clase
-where persona.nombre= 'Anahi';
+where persona.nombre= 'Anahi';;
 
 /*CONSULTAS PARA EL LADO DEL EMPLEADO
 1.Buscar el perfil de determinado cliente. (datos de cliente y su ficha medica)*/
