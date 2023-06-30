@@ -21,9 +21,11 @@ select persona.nombre from persona
 inner join empleado on persona.id_persona=empleado.id_empleado;
 
 /*3.BUSCAR O VISUALIZAR SU PROPIO HISTORIAL DE CITAS*/
-select  id_cita, fecha, hora from citas 
-where cliente= 100;
-
+ select citas.fecha, citas.hora, servicios.nombre from citas  inner join 
+ servicios_empleados on citas.serv_emp = servicios_empleados.id_empserv
+ inner join servicios on servicios_empleados.servicio = servicios.codigo
+ where cliente = 100;
+ 
 /*3.BUSCAR O VISUALIZAR SU PROPIO HISTORIAL DE CLASES*/
 select citas_spin.fecha, clases.dia, clases.hora from persona
 inner join cliente on persona.id_persona=cliente.id_cliente
