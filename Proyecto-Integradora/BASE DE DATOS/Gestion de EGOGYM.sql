@@ -10,7 +10,8 @@ and servicios.nombre = 'fisioterapia'
 and citas.fecha = '2023-06-28';
 
   /*2.Buscar el perfil de determinado empleado. (foto, nombre de persona y servicio que brinda)*/
-
+select empleado.foto, persona.nombre, servicios.nombre from persona
+inner join empleado on persona.id_persona=empleado.id_cliente
 
 /*3.BUSCAR O VISUALIZAR SU PROPIO HISTORIAL DE CITAS*/
 
