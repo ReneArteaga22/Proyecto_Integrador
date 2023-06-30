@@ -30,7 +30,11 @@ inner join servicios on servicios_empleados.servicio=servicios.codigo
 where persona.nombre = 'Anahi' and citas.estado = 'completada';
 
 /*3.BUSCAR O VISUALIZAR SU PROPIO HISTORIAL DE CLASES*/
-
+ select citas.fecha, citas.hora, servicios.nombre from citas  inner join 
+ servicios_empleados on citas.serv_emp = servicios_empleados.id_empserv
+ inner join servicios on servicios_empleados.servicio = servicios.codigo
+ where cliente = 100;
+ 
 /*CONSULTAS PARA EL LADO DEL EMPLEADO
 1.Buscar el perfil de determinado cliente. (datos de cliente y su ficha medica)*/
 
