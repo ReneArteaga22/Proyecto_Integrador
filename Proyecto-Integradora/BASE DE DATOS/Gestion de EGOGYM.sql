@@ -41,6 +41,16 @@ where persona.nombre= 'Anahi';
 
 
 
+/*LADO DE LA RECEPCIONISTA
+1. citas disponibles en determinada fecha para determinado servicio.*/
+
+/*2. citas agedadas para determinada fecha para determinado servicio.*/
+
+/*3. buscar determinado cliente con nombre o id de cliente.*/
+
+/*4. buscar determinado empleado con nombre o id de empleado.*/
+
+
   select * from persona;
  SELECT * FROM empleado;
  select * from recepcionista;
