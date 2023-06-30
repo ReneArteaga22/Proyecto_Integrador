@@ -21,28 +21,43 @@ select persona.nombre from persona
 inner join empleado on persona.id_persona=empleado.id_empleado;
 
 /*3.BUSCAR O VISUALIZAR SU PROPIO HISTORIAL DE CITAS*/
-select  id_cita, fecha, hora, servicios.nombre from citas 
-inner join cliente on citas.cliente=cliente.id_cliente
-inner join persona on cliente.id_cliente=persona.id_persona
-inner join empleado on persona.id_persona=empleado.id_empleado
-inner join servicios_empleados on empleado.id_empleado=servicios_empleados.empleado
-inner join servicios on servicios_empleados.servicio=servicios.codigo
-where persona.nombre = 'Anahi' and citas.estado = 'completada';
+select  id_cita, fecha, hora from citas 
+where cliente= 100;
 
 /*3.BUSCAR O VISUALIZAR SU PROPIO HISTORIAL DE CLASES*/
+<<<<<<< HEAD
  select citas.fecha, citas.hora, servicios.nombre from citas  inner join 
  servicios_empleados on citas.serv_emp = servicios_empleados.id_empserv
  inner join servicios on servicios_empleados.servicio = servicios.codigo
  where cliente = 100;
  
+=======
+select citas_spin.fecha, clases.dia, clases.hora from persona
+inner join cliente on persona.id_persona=cliente.id_cliente
+inner join citas_spin on cliente.id_cliente=citas_spin.cliente
+inner join clases on citas_spin.clase=clases.id_clase
+where persona.nombre= 'Anahi';
+
+>>>>>>> origin
 /*CONSULTAS PARA EL LADO DEL EMPLEADO
 1.Buscar el perfil de determinado cliente. (datos de cliente y su ficha medica)*/
 
 
 
-/*- 2.citas agendadas para cierta fecha para determinado empleado.*/
+/*- 2.citas agendadas para cierto servicio citas agendadas para cierta fecha para determinado empleado.*/
+select * from citas 
+
+/*- 3. citas agendadas para clases para cierta fecha para determinado empleado.*/
 
 
+/*LADO DE LA RECEPCIONISTA
+1. citas disponibles en determinada fecha para determinado servicio.*/
+
+/*2. citas agedadas para determinada fecha para determinado servicio.*/
+
+/*3. buscar determinado cliente con nombre o id de cliente.*/
+
+/*4. buscar determinado empleado con nombre o id de empleado.*/
 
 
   select * from persona;
