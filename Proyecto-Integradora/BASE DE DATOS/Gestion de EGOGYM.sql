@@ -11,10 +11,25 @@ and citas.fecha = '2023-06-28';
 
   /*2.Buscar el perfil de determinado empleado. (foto, nombre de persona y servicio que brinda)*/
 select empleado.foto, persona.nombre, servicios.nombre from persona
-inner join empleado on persona.id_persona=empleado.id_cliente
+inner join empleado on persona.id_persona=empleado.id_empleado
+inner join servicios_empleados on empleado.id_empleado= servicios_empleados.empleado
+inner join servicios on servicios_empleados.servicio=servicios.codigo
+where persona.nombre = 'Kiara';
+
+/*BUSCA TODOS LOS USUARIOS QUE SON EMPLEADOS*/
+select persona.nombre from persona
+inner join empleado on persona.id_persona=empleado.id_empleado;
 
 /*3.BUSCAR O VISUALIZAR SU PROPIO HISTORIAL DE CITAS*/
+select  id_cita, fecha, hora, servicios.nombre from citas 
+inner join cliente on citas.cliente=cliente.id_cliente
+inner join persona on cliente.id_cliente=persona.id_persona
+inner join empleado on persona.id_persona=empleado.id_empleado
+inner join servicios_empleados on empleado.id_empleado=servicios_empleados.empleado
+inner join servicios on servicios_empleados.servicio=servicios.codigo
+where persona.nombre = 'Anahi' and citas.estado = 'completada';
 
+/*3.BUSCAR O VISUALIZAR SU PROPIO HISTORIAL DE CLASES*/
 
 /*CONSULTAS PARA EL LADO DEL EMPLEADO
 1.Buscar el perfil de determinado cliente. (datos de cliente y su ficha medica)*/
