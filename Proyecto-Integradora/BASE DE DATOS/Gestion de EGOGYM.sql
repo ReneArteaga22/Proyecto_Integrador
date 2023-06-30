@@ -21,15 +21,15 @@ select persona.nombre from persona
 inner join empleado on persona.id_persona=empleado.id_empleado;
 
 /*3.BUSCAR O VISUALIZAR SU PROPIO HISTORIAL DE CITAS*/
-select  id_cita, fecha, hora, servicios.nombre from citas 
-inner join cliente on citas.cliente=cliente.id_cliente
-inner join persona on cliente.id_cliente=persona.id_persona
-inner join empleado on persona.id_persona=empleado.id_empleado
-inner join servicios_empleados on empleado.id_empleado=servicios_empleados.empleado
-inner join servicios on servicios_empleados.servicio=servicios.codigo
-where persona.nombre = 'Anahi' and citas.estado = 'completada';
+select  id_cita, fecha, hora from citas 
+where cliente= 100;
 
 /*3.BUSCAR O VISUALIZAR SU PROPIO HISTORIAL DE CLASES*/
+select citas_spin.fecha, clases.dia, clases.hora from persona
+inner join cliente on persona.id_persona=cliente.id_cliente
+inner join citas_spin on cliente.id_cliente=citas_spin.cliente
+inner join clases on citas_spin.clase=clases.id_clase
+where persona.nombre= 'Anahi';
 
 /*CONSULTAS PARA EL LADO DEL EMPLEADO
 1.Buscar el perfil de determinado cliente. (datos de cliente y su ficha medica)*/
